@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portalinvenova/pages/home.dart';
-import 'package:portalinvenova/pages/recipieSteps.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
       home: HomePage(),
-      routes: {
-        '/home': (context) => const HomePage(),
-        // '/test': (context) => const Recipiesteps(),
-      },
+      routes: {'/home': (context) => const HomePage()},
     );
   }
 }

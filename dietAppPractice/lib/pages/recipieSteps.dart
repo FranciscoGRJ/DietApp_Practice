@@ -33,7 +33,65 @@ class _RecipiestepsState extends State<Recipiesteps> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [const Text("Test")],
+        children: [
+          Container(
+            width: screenWidth * 0.8,
+            height: 500,
+            margin: EdgeInsets.only(
+              left: screenWidth * .1,
+              top: screenWidth * .1,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: const Color.fromARGB(255, 216, 185, 93),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Text(
+                    "Steps to follow:",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30),
+                Expanded(
+                  child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: populars[widget.position].steps.length,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          ListTile(
+                            leading: Icon(
+                              Icons.check_circle_outline,
+                              color: const Color.fromARGB(255, 165, 163, 163),
+                            ),
+                            title: Text(populars[widget.position].steps[index]),
+                          ),
+                          if (index <
+                              populars[widget.position].steps.length - 1)
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 20,
+                                right: 20,
+                              ),
+                              child: Divider(color: Colors.black),
+                            ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

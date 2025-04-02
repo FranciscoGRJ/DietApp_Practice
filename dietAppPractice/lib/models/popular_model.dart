@@ -10,6 +10,7 @@ class PopularModel {
   String routeName;
   int position;
   List<String> ingredients = [];
+  List<String> steps = [];
 
   PopularModel({
     required this.name,
@@ -21,6 +22,7 @@ class PopularModel {
     required this.routeName,
     required this.position,
     required this.ingredients,
+    required this.steps,
   });
 
   static List<PopularModel> getPopulars() {
@@ -45,6 +47,13 @@ class PopularModel {
           '1 tsp baking powder',
           '1/2 tsp salt',
         ],
+        steps: [
+          'Mix the flour, sugar, and milk in a bowl.',
+          'Add the egg and beat until smooth.',
+          'Fold in the blueberries gently.',
+          'Heat a pan and pour small portions of the mixture.',
+          'Cook until golden brown on both sides and serve warm.',
+        ],
       ),
     );
 
@@ -65,6 +74,13 @@ class PopularModel {
           '1 tbsp sugar',
           '1 tsp salt',
           'Nori sheets',
+        ],
+        steps: [
+          'Cook the rice and mix it with rice vinegar and salt.',
+          'Cut the salmon into thin slices.',
+          'Form small rice balls with wet hands.',
+          'Place a slice of salmon on top of each rice ball.',
+          'Serve with soy sauce and wasabi.',
         ],
       ),
     );
